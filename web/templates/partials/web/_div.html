@@ -1,0 +1,115 @@
+{% load static %}
+<div class="container mt-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-9">
+      <div class="card p-4 mt-3">
+        <h3 class="heading mt-5 text-center">Hava Durumu</h3>
+        <div class="d-flex justify-content-center px-5">
+          <div class="search">
+            <input type="text" class="search-input" placeholder="Şehir ara..." id="city">
+            <button onclick="getWeather()" class="search-icon">
+              <svg xmlns="" width="16" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center px-5 mt-4">
+          <ul>
+            <div class="col-md-12">
+              <div class="card-inner p-3 d-flex flex-column align-items-center">
+                <img src="{% static 'web/img/konum.svg' %}" width="50">
+                <div class="text-center mg-text">
+                  <span class="mg-text">Konum</span>
+                </div>
+              </div>
+            </div>
+              {% for durum in records %}
+              <li class="list-group-item">
+                {{ durum.city }}
+              </li>
+              {% endfor %}
+          </ul>
+          <ul>
+            <div class="col-md-12">
+              <div class="card-inner p-3 d-flex flex-column align-items-center">
+                <img src="{% static 'web/img/derece.svg' %}" width="50">
+                <div class="text-center mg-text">
+                  <span class="mg-text">Derece</span>
+                </div>
+              </div>
+            </div>
+            {% for durum in records %}
+              <li class="list-group-item">
+                {{ durum.temperature }}
+              </li>
+              {% endfor %}
+          </ul>
+          <ul>
+            <div class="col-md-12">
+              <div class="card-inner p-3 d-flex flex-column align-items-center">
+                <img src="{% static 'web/img/durum.svg' %}" width="50">
+                <div class="text-center mg-text">
+                  <span class="mg-text">Durum</span>
+                </div>
+              </div>
+            </div>
+            {% for durum in records %}
+              <li class="list-group-item">
+                {{ durum.expected_state }}
+              </li>
+              {% endfor %}
+          </ul>
+          <ul>
+            <div class="col-md-12">
+              <div class="card-inner p-3 d-flex flex-column align-items-center">
+                <img src="{% static 'web/img/nem.svg' %}" width="50">
+                <div class="text-center mg-text">
+                  <span class="mg-text">Nem</span>
+                </div>
+              </div>
+            </div>
+            {% for durum in records %}
+              <li class="list-group-item">
+                {{ durum.temperature }}
+              </li>
+              {% endfor %}
+          </ul>
+          <ul>
+            <div class="col-md-12">
+              <div class="card-inner p-3 d-flex flex-column align-items-center">
+                <img src="{% static 'web/img/gece.svg' %}" width="50">
+                <div class="text-center mg-text">
+                  <span class="mg-text">Gece</span>
+                </div>
+              </div>
+            </div>
+            {% for durum in records %}
+              <li class="list-group-item">
+                {{ durum.night }}
+              </li>
+              {% endfor %}
+          </ul>
+          <ul>
+            <div class="col-md-12">
+              <div class="card-inner p-3 d-flex flex-column align-items-center">
+                <img src="{% static 'web/img/tarih.svg' %}" width="50">
+                <div class="text-center mg-text">
+                  <span class="mg-text">Gün</span>
+                </div>
+              </div>
+            </div>
+            {% for durum in records %}
+              <li class="list-group-item">
+                {{ durum.day}}
+              </li>
+              {% endfor %}
+          </ul>
+        </div>
+        <div class="d-flex justify-content-center px-5">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

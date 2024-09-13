@@ -1,0 +1,20 @@
+{% extends "html/base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'web/css/_div.css' %}">
+{% endblock %}
+
+{% block title %}Welcome Homepage{% endblock %}
+
+{% block body %}
+
+{% include 'partials/web/_div.html' %}
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{% static 'web/js/web.js' %}"></script>
+
+{% endblock %}
