@@ -2,7 +2,7 @@ from django.conf import Settings
 import http.client
 import json
 from datetime import datetime
-from web.models import hava
+#from web.models import hava
 from django.utils import timezone
 
 def getCity(city):

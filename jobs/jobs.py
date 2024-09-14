@@ -2,21 +2,19 @@ from django.conf import Settings
 import http.client
 import json
 from datetime import datetime
-from web.models import hava, searchForCity
+#from web.models import hava, searchForCity
 from django.utils import timezone
 
 def scheduler():
   conn = http.client.HTTPSConnection("api.openweathermap.org")
-  print("çalışıyor")
 
   url = "/data/2.5/forecast?q="
   api = "&appid=07d4a54a56622b1b0cb8c37cad02941d"
 
-  test = hava(city = "Elazığ")
-  test.save()
+  #test = hava(city = "Elazig")
 
   #city = hava.objects.filter(city_id = 0)
-  city = "Elazığ"
+  city = "Elazig"
 
   conn.request("GET", url+city+api)
 
@@ -32,9 +30,8 @@ def scheduler():
   Wind = formatedData["list"][0]["wind"]["speed"]
   CreateTime = datetime.now()
 
-  data = hava(city = cityName, temperature = Temperature, expected_state = ExpectedState,
-              humidity = Humidity, wind = Wind, create_time = CreateTime)
+  #data = hava(city = cityName, temperature = Temperature, expected_state = ExpectedState, humidity = Humidity, wind = Wind, create_time = CreateTime)
   
-  data.save()
+  #data.save()
 
   print(cityName)
