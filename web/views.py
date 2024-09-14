@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from .models import hava
+from .models import hava
 from .getCity import getCity 
 
 # Create your views here.
@@ -10,10 +10,10 @@ def main(request):
 
 def mainRecords(request,city):
 
+  search = hava.objects.filter(city = city).order_by('-create_time')
+
   getCity(city)
 
-  search = "elazig"#hava.objects.filter(city = city)
-
   return render(request,"web/html/web.html",{
-    "records":"search"
+    "records": search
   })

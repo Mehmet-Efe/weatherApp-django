@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'havaDurumu.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'havaDurumu',
+        'NAME': 'weatherAppDB',
         'USER': 'admin',
         'PASSWORD': 'admin'
     }

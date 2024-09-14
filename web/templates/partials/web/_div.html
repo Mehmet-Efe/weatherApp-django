@@ -81,13 +81,13 @@
               <div class="card-inner p-3 d-flex flex-column align-items-center">
                 <img src="{% static 'web/img/ruzgar.svg' %}" width="50">
                 <div class="text-center mg-text">
-                  <span class="mg-text">Gece</span>
+                  <span class="mg-text">Rüzgar</span>
                 </div>
               </div>
             </div>
             {% for durum in records %}
               <li class="list-group-item">
-                {{ durum.night }}
+                {{ durum.wind }}
               </li>
               {% endfor %}
           </ul>
@@ -102,7 +102,7 @@
             </div>
             {% for durum in records %}
               <li class="list-group-item">
-                {{ durum.day}}
+                {{ durum.create_time}}
               </li>
               {% endfor %}
           </ul>

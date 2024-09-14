@@ -1,7 +1,6 @@
 from django.contrib import admin
-#from .models import hava
+from .models import hava
 
 # Register your models here.
 
-
-#admin.site.register(hava)
+admin.site.register(hava)
