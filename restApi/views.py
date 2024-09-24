@@ -23,23 +23,8 @@ def get_hava(request,city):
     serializer = havaSerializer(durum, many=True)
     return Response(serializer.data)
 
-@api_view(['GET'])
-def put_hava(request):
-    """
-    durum = searchForCity.objects.get(city_id=1)
-    
-    serializer = schedulerChange(durum,city)//?????????????
-    
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data)
-    
-    print(serializer.data)
-    return Response(status = status.HTTP_400_BAD_REQUEST)
-    """
-    #Syntax = http://127.0.0.1:8000/api/change/new/?city=Adana
-    print("put_hava")
-    city=request.query_params["city"]
+@api_view(['PUT'])
+def put_hava(request,city):
     cityName = searchForCity(city_id = 1, city = city)
     cityName.save()
     return Response(status=status.HTTP_201_CREATED)
