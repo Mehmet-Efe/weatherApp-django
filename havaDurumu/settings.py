@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'web',
     'restApi',
     'rest_framework',
+    'django_cron',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +52,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CRON_CLASSES = [
+    'cronjob.cron.job',
+    #'cronjob.cron.job2',
+]
+
 
 ROOT_URLCONF = 'havaDurumu.urls'
 

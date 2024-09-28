@@ -4,6 +4,6 @@ from .jobs import scheduler
 
 def start():
   sched = BackgroundScheduler()
-  sched.add_job(scheduler,'interval', hours=10)
+  sched.add_job(scheduler,'interval', minutes=1)
   print("iş başladı")
   sched.start()
